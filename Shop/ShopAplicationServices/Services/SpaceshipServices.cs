@@ -1,5 +1,7 @@
 ﻿using Shop.Core.Domain;
+using Shop.Core.ServiceInterface;
 using Shop.Data;
+using Shop.Core.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ShopAplicationServices.Services
 {
-    public class SpaceshipServices
+    public class SpaceshipServices: ISpaceshipServices
     {
         private readonly ShopContext _context;
 

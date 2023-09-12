@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Shop.Core.Domain;
+using Shop.Core.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace Shop.Core.ServiceInterface
 {
-    internal interface Interface1
+    public interface ISpaceshipServices
     {
+
+        Task<Spaceship> Create(Spaceship dto);
     }
 }

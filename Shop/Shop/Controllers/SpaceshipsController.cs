@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shop.Core.Dto;
+using Shop.Core.ServiceInterface;
 using Shop.Data;
 using Shop.Models.Spaceship;
 using System.Xml.Linq;
@@ -9,9 +10,14 @@ namespace Shop.Controllers
     public class SpaceshipsController : Controller
     {
         private readonly ShopContext _context;
+        private readonly ISpaceshipServices _spaceshipServices;
 
-        public SpaceshipsController(ShopContext context)
-        { this._context = context; }
+        public SpaceshipsController
+            (ShopContext context,
+            ISpaceshipServices spaceshipServices)
+        { this._context = context;
+            _spaceshipServices = spaceshipServices;
+        }
 
 
         public IActionResult Index()
@@ -53,7 +59,7 @@ namespace Shop.Controllers
 
             };
 
-            var result = await ;
+            var result = await _spaceshipServices.Create(dto);
 
 
 
