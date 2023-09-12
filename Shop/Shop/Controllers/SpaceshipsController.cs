@@ -52,6 +52,12 @@ namespace Shop.Controllers
                 CargoWeight = vm.CargoWeight,
 
             };
+
+            var result = await ;
+
+
+
+            return RedirectToAction(nameof(Index),vm) ;
         }
     }
 }
